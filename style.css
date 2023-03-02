@@ -97,6 +97,7 @@ p {
     border-radius: 50px;
     font-size: 20px;
     letter-spacing: 3px;
+    border: none;
 }
 
 .submit:hover {
