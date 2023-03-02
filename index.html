@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script defer src="./script.js"></script>
+  <title>Interactive Rating Component</title>
+</head>
+<body>
+  <main data-state="rating" id="component" class="component">
+    <div class="rating">
+      <div class="star"></div>
+      <div class="text-container">
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      </div>
+      <div class="btn-rating">
+        <button onclick="updateRating(1)" class="rating-num"><p>1</p></button>
+        <button onclick="updateRating(2)" class="rating-num"><p>2</p></button>
+        <button onclick="updateRating(3)" class="rating-num"><p>3</p></button>
+        <button onclick="updateRating(4)" class="rating-num"><p>4</p></button>
+        <button onclick="updateRating(5)" class="rating-num"><p>5</p></button>
+      </div>
+      <button class="submit">SUBMIT</button>
+    </div>
+    
+    <div class="thank-you">
+      <img src="./images/illustration-thank-you.svg" alt="thank you!" class="ty-illustration">
+      <div class="selected-rating"></div>
+      <h1 class="ty-text">Thank you!</h1>
+      <p class="appreciation" style="text-align: center;">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+    </div>
+  </main>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Derp</a>.
+  </div> -->
+</body>
+</html>

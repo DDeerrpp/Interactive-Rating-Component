@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+body {
+    background-color: var(--very-dark-blue);
+}
+
+.component,
+.component > * {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-50%);
+    background: no-repeat var(--dark-blue) radial-gradient(circle at 50% 10px, var(--dark-blue), var(--very-dark-blue) 150%);
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.component > .thank-you {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.component[data-state="rating"] > .rating,
+.component[data-state="thank-you"] > .thank-you {
+    display: flex;
+}
+
+.component[data-state="thank-you"] > .rating,
+.component[data-state="rating"] > .thank-you {
+    display: none;
+}
+
+
+.star {
+    background: url('./images/icon-star.svg') var(--dark-blue) no-repeat center;
+    background-size: 25px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+h1 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--light-grey);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rating-num {
+    background-color: var(--dark-blue);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-num > p {
+    position: relative;
+    font-size: 20px;
+    color: var(--light-grey);
+}
+
+.submit {
+    background-color: var(--orange);
+    color: var(--white);
+    width: 100%;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.submit:hover {
+    color: var(--orange);
+    background-color: var(--white);
+    font-weight: 700;
+}
+
+.rating-num:focus {
+    background-color: var(--medium-grey);
+}
+
+.rating-num:focus > p {
+    color: var(--white);
+}
+
+.rating-num:hover {
+    background-color: var(--orange);
+}
+
+.rating-num:hover > p {
+    color: var(--white);
+}
+
+/* ============================================ */
+
+.selected-rating {
+    width: 210px;
+    height: 40px;
+    border-radius: 40px;
+    color: var(--orange);
+    background-color: var(--dark-blue);
+    text-align: center;
+    line-height: 40px;
+    transform: translateY(10px);
+}
+
+.ty-text {
+    transform: translateY(25px);
+}
+
+.appreciation {
+    font-size: 18.5px;
+}
+
+.ty-illustration {
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .component,
+    .component > * {
+        width: 350px;
+        height: 350px;
+        border-radius: 15px;
+        padding: 20px;
+    }
+    .star {
+        background-size: 15px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    
+    p {
+        font-size: 15px;
+    }
+
+    
+    .rating-num {
+        width: 45px;
+        height: 45px;
+    }
+
+    .rating-num > p {
+        font-size: 15px;
+    }
+    
+    .submit {
+        height: 50px;
+        font-size: 15px;
+    }
+
+    .component > .thank-you {
+        justify-content: space-evenly;
+    }
+
+    .selected-rating {
+        width: 180px;
+        height: 35px;
+        border-radius: 35px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 15px;
+        transform: translateY(10px);
+        margin: 10px 0 10px;
+    }
+    
+    .ty-text {
+        margin-bottom: 30px;
+    }
+    
+    .appreciation {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .ty-illustration {
+        width: 50%;
+        margin-top: 15px;
+    }
+}
